@@ -1,0 +1,117 @@
+.container {
+ width: 100%;
+ max-width: 1200px;
+ margin: 0 auto;
+}
+.flex {
+ display: flex;
+}
+.grid {
+ display: grid;
+}
+.justify-between {
+ justify-content: space-between;
+}.align-center {
+ align-items: center;
+}
+.gap-md {
+ gap: 1rem;
+}
+.gap-lg {
+ gap: 2rem;
+}
+.cols-3 {
+ grid-template-columns: repeat(3, 1fr);
+}
+/* Стилевые классы */
+.bg-white {
+ background: #fff;
+}
+.bg-light {
+ background: #f8f9fa;
+}
+.text-primary {
+ color: #2c5530;
+}
+.border {
+ border: 1px solid #ddd;
+}
+.border-bottom {
+ border-bottom: 2px solid;
+}
+.rounded {
+ border-radius: 8px;
+}
+.padding-lg {
+ padding: 1.5rem;
+}
+/* Компоненты */
+.logo.brand {
+ font-size: 1.5rem;
+ font-weight: bold;
+}
+.card {
+ transition: transform 0.2s;
+}.card:hover {
+ transform: translateY(-2px);
+}
+@font-face {
+ font-family: 'CustomFont';
+ src: url('../assets/fonts/custom-font.woff2') format('woff2');
+ font-weight: 400;
+ font-display: swap;
+}
+/* Применение шрифтов */
+body {
+ font-family: 'Inter', system-ui, sans-serif;
+}.hover-lift:hover {
+ transform: translateY(-2px);
+ transition: transform 0.2s ease;
+}
+.hover-grow:hover {
+ transform: scale(1.02);
+ transition: transform 0.2s ease;
+}
+.hover-shadow:hover {
+ box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+ transition: box-shadow 0.3s ease;
+}
+.focus-outline:focus {
+ outline: 2px solid #2c5530;
+ outline-offset: 2px;
+}
+.active-scale:active {
+ transform: scale(0.98);
+}
+.transition {
+ transition: all 0.3s ease;
+}
+.bg-hover-light:hover {
+ background-color: #f8f9fa;
+}.bg-hover-primary:hover {
+ background-color: #2c5530;
+ color: white;
+}.fade-in {
+ animation: fadeIn 0.5s ease-in;
+}
+@keyframes fadeIn {
+ from { opacity: 0; transform: translateY(10px); }
+ to { opacity: 1; transform: translateY(0); }
+}
+/* Подсветка текущего раздела */
+.section-highlight {
+ transition: all 0.3s ease;
+}
+.section-highlight:hover {
+ border-left: 4px solid #2c5530;
+ padding-left: 1rem;
+}
+/* Интерактивные карточки */
+.interactive-card {
+ cursor: pointer;
+ transition: all 0.3s ease;
+}
+.interactive-card:hover {
+ transform: translateY(-5px);
+ box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
