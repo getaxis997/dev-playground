@@ -75,7 +75,152 @@ section {
     top: 0;
     z-index: 1000;
 }
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
 
+.header__menu-toggle {
+    display: none; /* Скрыт на десктопе */
+}
+
+.header__menu-button {
+    display: none; /* Скрыт на десктопе */
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 24px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1001;
+}
+
+.header__menu-icon,
+.header__menu-icon::before,
+.header__menu-icon::after {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #333;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.header__menu-icon::before {
+    content: '';
+    transform: translateY(-8px);
+}
+
+.header__menu-icon::after {
+    content: '';
+    transform: translateY(6px);
+}
+
+/* ========== АДАПТИВНОСТЬ (Desktop First) ========== */
+
+/* Ноутбуки */
+@media (max-width: 1199px) {
+    /* Нет изменений в макете, только цвет/шрифт при желании */
+}
+
+/* Планшеты */
+@media (max-width: 991px) {
+    .footer__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .content-grid,
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Мобильные устройства (начиная с 767px) */
+@media (max-width: 767px) {
+    .header__menu-toggle,
+    .header__menu-button {
+        display: flex;
+    }
+
+    .navigation {
+        position: relative;
+    }
+
+    .navigation__list {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #fff;
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem 0;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        display: none; /* Скрыто по умолчанию */
+        margin: 0;
+    }
+
+    .header__menu-toggle:checked ~ .navigation .navigation__list {
+        display: flex;
+    }
+
+    .logo__image {
+        height: 50px;
+    }
+
+    section, .club {
+        padding: 2.5rem 0;
+    }
+
+    .hero {
+        padding: 4rem 0 2.5rem;
+    }
+
+    .products {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+
+    .club__card {
+        padding: 2rem;
+    }
+}
+
+/* Маленькие мобильные */
+@media (max-width: 575px) {
+    .hero__title {
+        font-size: 2rem;
+    }
+
+    .portfolio__title,
+    .about__title,
+    .services__title,
+    .contact__title,
+    .club__title {
+        font-size: 1.75rem;
+    }
+}
+
+/* Очень маленькие экраны */
+@media (max-width: 399px) {
+    .footer__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .social-icons {
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    .button {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+    }
+}
 .logo__image {
     height: 60px;
     width: auto;
@@ -385,6 +530,7 @@ section {
     margin: 2rem auto 0;
     display: block;
     padding: 0.8rem 2rem;
+    justify-content: center;
 }
 
 .button--interactive:hover,
