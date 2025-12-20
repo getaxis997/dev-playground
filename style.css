@@ -1,0 +1,549 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', system-ui, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #fff;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.content-grid,
+.contact-grid {
+    display: grid;
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.content-grid {
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+}
+
+.contact-grid {
+    grid-template-columns: 1fr 1fr;
+}
+
+section {
+    padding: 4rem 0;
+}
+
+/* --- header --- */
+.header {
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+.header__menu-toggle {
+    display: none; /* Скрыт на десктопе */
+}
+
+.header__menu-button {
+    display: none; /* Скрыт на десктопе */
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 24px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1001;
+}
+
+.header__menu-icon,
+.header__menu-icon::before,
+.header__menu-icon::after {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #333;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.header__menu-icon::before {
+    content: '';
+    transform: translateY(-8px);
+}
+
+.header__menu-icon::after {
+    content: '';
+    transform: translateY(6px);
+}
+/* Ноутбуки */
+@media (max-width: 1199px) {
+    /* Нет изменений в макете, только цвет/шрифт при желании */
+}
+
+/* Планшеты */
+@media (max-width: 991px) {
+    .footer__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .content-grid,
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Мобильные устройства (начиная с 767px) */
+@media (max-width: 767px) {
+    .header__menu-toggle,
+    .header__menu-button {
+        display: flex;
+    }
+
+    .navigation {
+        position: relative;
+    }
+
+    .navigation__list {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #fff;
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem 0;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        display: none; /* Скрыто по умолчанию */
+        margin: 0;
+    }
+
+    .header__menu-toggle:checked ~ .navigation .navigation__list {
+        display: flex;
+    }
+
+    .logo__image {
+        height: 50px;
+    }
+
+    section, .club {
+        padding: 2.5rem 0;
+    }
+
+    .hero {
+        padding: 4rem 0 2.5rem;
+    }
+
+    .products {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+
+    .club__card {
+        padding: 2rem;
+    }
+}
+
+/* Маленькие мобильные */
+@media (max-width: 575px) {
+    .hero__title {
+        font-size: 2rem;
+    }
+
+    .portfolio__title,
+    .about__title,
+    .services__title,
+    .contact__title,
+    .club__title {
+        font-size: 1.75rem;
+    }
+}
+
+/* Очень маленькие экраны */
+@media (max-width: 399px) {
+    .footer__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .social-icons {
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    .button {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+    }
+}
+.logo__image {
+    height: 60px;
+    width: auto;
+}
+
+.navigation {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navigation__list {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+}
+
+.navigation__link {
+    font-weight: 500;
+    padding: 0.5rem 0;
+    position: relative;
+    color: inherit;
+}
+
+.navigation__link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #2c5530;
+    transition: width 0.3s ease;
+}
+
+.navigation__link:hover::after {
+    width: 100%;
+}
+
+/* --- hero --- */
+.hero {
+    text-align: center;
+    padding: 6rem 0 4rem;
+}
+
+.hero__title {
+    font-size: 2.5rem;
+    margin: 0;
+}
+
+/* --- about --- */
+.about__title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.about__text {
+    margin: 0;
+}
+
+.about__image {
+    width: 100%;
+    height: auto;
+}
+
+.card-container {
+    display: flex;
+    justify-content: center;
+    margin: 3rem 0;
+}
+
+.card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1rem;
+    background: #f8f9fa;
+    text-align: center;
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+}
+
+.card__title {
+    margin: 0 0 0.5rem;
+    font-size: 1.25rem;
+}
+
+.card__text {
+    margin: 0;
+    color: #666;
+}
+
+/* --- services --- */
+.services__title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.services__features {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.feature {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+}
+
+.feature__icon {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+}
+
+.feature__text {
+    margin: 0;
+}
+
+/* --- portfolio --- */
+.portfolio__title {
+    font-size: 2rem;
+    margin: 4rem 0 2rem;
+}
+
+.portfolio__title--popular {
+    margin-top: 4rem;
+}
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.product {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.product:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.product__image {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    margin: 0 auto 1rem;
+}
+
+.product__title {
+    margin: 0 0 0.5rem;
+    font-size: 1.1rem;
+}
+
+.product__price {
+    margin: 0;
+    color: #2c5530;
+    font-weight: 500;
+}
+
+/* --- club --- */
+.club {
+    padding: 4rem 0;
+}
+
+.club__card {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 12px;
+    padding: 3rem;
+    margin: 3rem 0;
+    text-align: center;
+}
+
+.club__title {
+    font-size: 2rem;
+    margin: 0 0 1.5rem;
+}
+
+.club__text {
+    margin: 0 0 1.5rem;
+}
+
+/* --- contact --- */
+.contact__title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.contact-info__subtitle {
+    margin: 1rem 0 0.5rem;
+    color: #2c5530;
+}
+
+.contact-info__text {
+    margin: 0 0 0.5rem;
+}
+
+.newsletter__title {
+    margin-bottom: 1rem;
+}
+
+.newsletter__input {
+    width: 100%;
+    padding: 0.8rem;
+    margin: 0.5rem 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+/* --- footer --- */
+.footer {
+    background-color: #2c5530;
+    color: white;
+    padding: 4rem 0 2rem;
+}
+
+.footer__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.footer-section__title {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.footer-section__text,
+.footer-section__list {
+    margin: 0;
+}
+
+.footer-section__link {
+    display: block;
+    margin: 0.5rem 0;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.footer-section__link:hover {
+    opacity: 1;
+    text-decoration: underline;
+}
+
+.social-container {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+}
+
+.social-icons__icon {
+    width: 30px;
+    height: 30px;
+    filter: invert(1);
+}
+
+.social-container__copyright {
+    margin: 0;
+}
+
+/* --- buttons --- */
+.button {
+    background-color: #2c5530;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.button:hover {
+    background-color: #224025;
+}
+
+.button--interactive {
+    display: block;
+    margin: 2rem auto;
+    padding: 0.8rem 2rem;
+}
+
+.button--buy-all,
+.button--club,
+.button--subscribe {
+    margin: 2rem auto 0;
+    display: block;
+    padding: 0.8rem 2rem;
+    justify-content: center;
+}
+
+.button--interactive:hover,
+.button--buy-all:hover,
+.button--club:hover,
+.button--subscribe:hover {
+    transform: translateY(-2px);
+}
+.button:focus {
+    outline: 2px solid #2c5530;
+    outline-offset: 3px;
+    box-shadow: 0 0 0 3px rgba(44, 85, 48, 0.2);
+}
+
+.button:active {
+    transform: scale(0.98);
+    background-color: #1a3a1e;
+}
+
+.button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+    transform: none;
+    opacity: 0.7;
+}
+
+.navigation__link:focus {
+    outline: 2px solid #2c5530;
+    outline-offset: 4px;
+    border-radius: 2px;
+}
+
+.navigation__link:active {
+    color: #224025;
+}
