@@ -5,154 +5,180 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Табуретка для кокетки</title>
     <link rel="stylesheet" href="style.css">
+    <!-- Подключение шрифтов -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Кнопка "Наверх" -->
+    <button class="scroll-top" id="scrollTop" aria-label="Наверх">
+        ↑
+    </button>
+
     <header class="header">
         <div class="container">
-            <div class="logo">
-                <img src="./assets/img/logo.png" alt="Логотип компании Табуретка для кокетки" class="logo__image">
+            <div class="header__inner">
+                <div class="logo">
+                    <img src="./assets/img/logo.png" alt="Логотип компании Табуретка для кокетки" class="logo__image">
+                </div>
+
+                <!-- Гамбургер-кнопка -->
+                <button class="menu-toggle" id="menuToggle" aria-label="Открыть меню" aria-expanded="false">
+                    <span class="menu-toggle__line"></span>
+                    <span class="menu-toggle__line"></span>
+                    <span class="menu-toggle__line"></span>
+                </button>
+
+                <nav class="navigation" id="mainNav">
+                    <ul class="navigation__list">
+                        <li class="navigation__item"><a href="#about" class="navigation__link">О нас</a></li>
+                        <li class="navigation__item"><a href="#services" class="navigation__link">Услуги</a></li>
+                        <li class="navigation__item"><a href="#portfolio" class="navigation__link">Портфолио</a></li>
+                        <li class="navigation__item"><a href="#contact" class="navigation__link">Контакты</a></li>
+                    </ul>
+                    <!-- Кнопка CTA (только для десктопа) -->
+                    <button class="button button--cta">Заказать</button>
+                </nav>
             </div>
-
-            <!-- Бургер-чекбокс -->
-            <input type="checkbox" id="menu-toggle" class="header__menu-toggle">
-            <label for="menu-toggle" class="header__menu-button">
-                <span class="header__menu-icon"></span>
-            </label>
-
-            <nav class="navigation">
-                <ul class="navigation__list">
-                    <li class="navigation__item"><a href="#about" class="navigation__link">О нас</a></li>
-                    <li class="navigation__item"><a href="#services" class="navigation__link">Услуги</a></li>
-                    <li class="navigation__item"><a href="#portfolio" class="navigation__link">Портфолио</a></li>
-                    <li class="navigation__item"><a href="#contact" class="navigation__link">Контакты</a></li>
-                </ul>
-            </nav>
         </div>
     </header>
     
-    <main>
+    <main class="main">
         <section class="hero">
-            <h1 class="hero__title">Табуретки для кокетки</h1>
+            <div class="container">
+                <h1 class="hero__title">Табуретки для кокетки</h1>
+            </div>
         </section>
 
         <section id="about" class="about">
-            <h2 class="about__title">Табуретка &laquo;ручной работы&raquo;</h2>
-            <div class="about__content content-grid">
-                <p class="about__text">Безусловно, существующая теория прекрасно подходит для реализации глубокомысленных рассуждений. 
-                    Банальные, но&nbsp;неопровержимые выводы, а&nbsp;также сторонники тоталитаризма в&nbsp;науке, вне 
-                    зависимости от&nbsp;их&nbsp;уровня, должны быть подвергнуты целой серии независимых исследований. 
-                    Ясность нашей позиции очевидна: укрепление и&nbsp;развитие внутренней структуры обеспечивает широкому 
-                    кругу (специалистов) участие в&nbsp;формировании дальнейших направлений развития. Учитывая ключевые 
-                    сценарии поведения, реализация намеченных плановых заданий требует от&nbsp;нас анализа вывода текущих 
-                    активов.</p>
-                <img src="./assets/img/RightImage.png" alt="Табуретка в интерьере" class="about__image">
-            </div>
-            
-            <div class="card-container">
-                <div class="card card--about padding-lg border rounded bg-light">
-                    <h3 class="card__title">Кокетки для табуретки</h3>
-                    <p class="card__text">Услуга по изготовлению табуреток на заказ</p>
+            <div class="container">
+                <h2 class="about__title">Табуретка &laquo;ручной работы&raquo;</h2>
+                <div class="about__content content-grid">
+                    <div class="about__text-wrapper">
+                        <p class="about__text">Безусловно, существующая теория прекрасно подходит для реализации глубокомысленных рассуждений. 
+                            Банальные, но&nbsp;неопровержимые выводы, а&nbsp;также сторонники тоталитаризма в&nbsp;науке, вне 
+                            зависимости от&nbsp;их&nbsp;уровня, должны быть подвергнуты целой серии независимых исследований. 
+                            Ясность нашей позиции очевидна: укрепление и&nbsp;развитие внутренней структуры обеспечивает широкому 
+                            кругу (специалистов) участие в&nbsp;формировании дальнейших направлений развития. Учитывая ключевые 
+                            сценарии поведения, реализация намеченных плановых заданий требует от&nbsp;нас анализа вывода текущих 
+                            активов.</p>
+                    </div>
+                    <img src="./assets/img/RightImage.png" alt="Табуретка в интерьере" class="about__image">
+                </div>
+                
+                <div class="card-container">
+                    <div class="card card--about">
+                        <h3 class="card__title">Кокетки для табуретки</h3>
+                        <p class="card__text">Услуга по изготовлению табуреток на заказ</p>
+                    </div>
                 </div>
             </div>
         </section>
 
         <section id="services" class="services">
-            <h2 class="services__title">Почему &quot;Табуретки для&nbsp;кокетки&quot;</h2>
-            <div class="services__features">
-                <div class="feature">
-                    <img src="./assets/icons/Delivery.png" alt="Иконка доставки" class="feature__icon">
-                    <span class="feature__text">Сложно сказать, почему преступность никогда не&nbsp;была такой неорганизованной.</span>
+            <div class="container">
+                <h2 class="services__title">Почему &quot;Табуретки для&nbsp;кокетки&quot;</h2>
+                <div class="services__features">
+                    <div class="feature">
+                        <img src="./assets/icons/Delivery.png" alt="Иконка доставки" class="feature__icon">
+                        <span class="feature__text">Сложно сказать, почему преступность никогда не&nbsp;была такой неорганизованной.</span>
+                    </div>
+                    <div class="feature">
+                        <img src="./assets/icons/Delivery.png" alt="Иконка гарантии" class="feature__icon">
+                        <span class="feature__text">Кстати, активно развивающиеся страны третьего мира, которые представляют собой яркий 
+                            пример континентально-европейского типа политической культуры, будут заблокированы в рамках своих 
+                            собственных рациональных ограничений.</span>
+                    </div>
+                    <div class="feature">
+                        <img src="./assets/icons/Delivery.png" alt="Иконка качества" class="feature__icon">
+                        <span class="feature__text">С&nbsp;учётом сложившейся международной обстановки, внедрение современных методик
+                            требует определения и&nbsp;уточнения кластеризации усилий.</span>
+                    </div>
                 </div>
-                <div class="feature">
-                    <img src="./assets/icons/Delivery.png" alt="Иконка гарантии" class="feature__icon">
-                    <span class="feature__text">Кстати, активно развивающиеся страны третьего мира, которые представляют собой яркий 
-                        пример континентально-европейского типа политической культуры, будут заблокированы в рамках своих 
-                        собственных рациональных ограничений.</span>
-                </div>
-                <div class="feature">
-                    <img src="./assets/icons/Delivery.png" alt="Иконка качества" class="feature__icon">
-                    <span class="feature__text">С&nbsp;учётом сложившейся международной обстановки, внедрение современных методик
-                        требует определения и&nbsp;уточнения кластеризации усилий.</span>
-                </div>
+                <button class="button button--interactive">Интерактивная кнопка</button>
             </div>
-            <button class="button button--interactive">Интерактивная кнопка</button>
         </section>
 
         <section id="portfolio" class="portfolio">
-            <h2 class="portfolio__title">Коллекция Зима-Лето 2026</h2>
-            <div class="products products--collection">
-                <div class="product">
-                    <img src="./assets/img/Photo(1).png" alt="Ваза алюминиевая" class="product__image">
-                    <h3 class="product__title">Ваза алюминиевая</h3>
-                    <p class="product__price">267 р.</p>
+            <div class="container">
+                <h2 class="portfolio__title">Коллекция Зима-Лето 2026</h2>
+                <div class="products products--collection">
+                    <div class="product">
+                        <img src="./assets/img/Photo(1).png" alt="Ваза алюминиевая" class="product__image">
+                        <h3 class="product__title">Ваза алюминиевая</h3>
+                        <p class="product__price">267 р.</p>
+                    </div>
+                    <div class="product">
+                        <img src="./assets/img/Photo(2).png" alt="Лампа энергоэффективная" class="product__image">
+                        <h3 class="product__title">Лампа энергоэффективная</h3>
+                        <p class="product__price">155 р.</p>
+                    </div>
+                    <div class="product">
+                        <img src="./assets/img/Photo(3).png" alt="Стул из дуба б/у" class="product__image">
+                        <h3 class="product__title">Стул из дуба б/у</h3>
+                        <p class="product__price">125 р.</p>
+                    </div>
+                    <div class="product">
+                        <img src="./assets/img/Photo.png" alt="Стул из сосны" class="product__image">
+                        <h3 class="product__title">Стул из сосны</h3>
+                        <p class="product__price">399 р.</p>
+                    </div>
                 </div>
-                <div class="product">
-                    <img src="./assets/img/Photo(2).png" alt="Лампа энергоэффективная" class="product__image">
-                    <h3 class="product__title">Лампа энергоэффективная</h3>
-                    <p class="product__price">155 р.</p>
-                </div>
-                <div class="product">
-                    <img src="./assets/img/Photo(3).png" alt="Стул из дуба б/у" class="product__image">
-                    <h3 class="product__title">Стул из дуба б/у</h3>
-                    <p class="product__price">125 р.</p>
-                </div>
-                <div class="product">
-                    <img src="./assets/img/Photo.png" alt="Стул из сосны" class="product__image">
-                    <h3 class="product__title">Стул из сосны</h3>
-                    <p class="product__price">399 р.</p>
-                </div>
-            </div>
-            <button class="button button--buy-all">Купить все</button>
+                <button class="button button--buy-all">Купить все</button>
 
-            <h2 class="portfolio__title portfolio__title--popular">Самые ходовые модели</h2>
-            <div class="products products--popular">
-                <div class="product">
-                    <img src="./assets/img/Large.png" alt="Диван" class="product__image">
-                    <h3 class="product__title">Диван</h3>
-                    <p class="product__price">250000 р.</p>
+                <h2 class="portfolio__title portfolio__title--popular">Самые ходовые модели</h2>
+                <div class="products products--popular">
+                    <div class="product">
+                        <img src="./assets/img/Large.png" alt="Диван" class="product__image">
+                        <h3 class="product__title">Диван</h3>
+                        <p class="product__price">250000 р.</p>
+                    </div>
+                    <div class="product">
+                        <img src="./assets/img/Photo(2).png" alt="Лампа сверхэффективная" class="product__image">
+                        <h3 class="product__title">Лампа сверхэффективная</h3>
+                        <p class="product__price">155 р.</p>
+                    </div>
+                    <div class="product">
+                        <img src="./assets/img/Photo(3).png" alt="Стул из дуба б/у" class="product__image">
+                        <h3 class="product__title">Стул из дуба б/у</h3>
+                        <p class="product__price">125 р.</p>
+                    </div>
                 </div>
-                <div class="product">
-                    <img src="./assets/img/Photo(2).png" alt="Лампа сверхэффективная" class="product__image">
-                    <h3 class="product__title">Лампа сверхэффективная</h3>
-                    <p class="product__price">155 р.</p>
-                </div>
-                <div class="product">
-                    <img src="./assets/img/Photo(3).png" alt="Стул из дуба б/у" class="product__image">
-                    <h3 class="product__title">Стул из дуба б/у</h3>
-                    <p class="product__price">125 р.</p>
-                </div>
+                <button class="button button--buy-all">Купить все</button>
             </div>
-            <button class="button button--buy-all">Купить все</button>
         </section>
 
         <section class="club">
-            <div class="club__card">
-                <h2 class="club__title">Клубная карта</h2>
-                <p class="club__text">В&nbsp;целом, конечно, начало повседневной работы по&nbsp;формированию позиции требует определения
-                    и&nbsp;уточнения новых предложений. Современные технологии достигли такого уровня, что убеждённость
-                    некоторых оппонентов не&nbsp;даёт нам иного выбора, кроме определения укрепления моральных ценностей.
-                    Задача организации, в&nbsp;особенности&nbsp;же укрепление и&nbsp;развитие внутренней структуры
-                    способствует повышению качества новых принципов формирования материально-технической и&nbsp;кадровой
-                    базы.</p>
-                <button class="button button--club">Всего от 399 руб/сутки</button>
+            <div class="container">
+                <div class="club__card">
+                    <h2 class="club__title">Клубная карта</h2>
+                    <p class="club__text">В&nbsp;целом, конечно, начало повседневной работы по&nbsp;формированию позиции требует определения
+                        и&nbsp;уточнения новых предложений. Современные технологии достигли такого уровня, что убеждённость
+                        некоторых оппонентов не&nbsp;даёт нам иного выбора, кроме определения укрепления моральных ценностей.
+                        Задача организации, в&nbsp;особенности&nbsp;же укрепление и&nbsp;развитие внутренней структуры
+                        способствует повышению качества новых принципов формирования материально-технической и&nbsp;кадровой
+                        базы.</p>
+                    <button class="button button--club">Всего от 399 руб/сутки</button>
+                </div>
             </div>
         </section>
 
         <section id="contact" class="contact">
-            <h2 class="contact__title">Контакты</h2>
-            <div class="contact__content contact-grid">
-                <div class="contact-info">
-                    <h3 class="contact-info__subtitle">Адрес</h3>
-                    <p class="contact-info__text">г. Москва, ул. Табуреточная, д. 5</p>
-                    <h3 class="contact-info__subtitle">Телефон</h3>
-                    <p class="contact-info__text">+7 (495) 123-45-67</p>
-                    <h3 class="contact-info__subtitle">Email</h3>
-                    <p class="contact-info__text">info@taburetka.ru</p>
-                </div>
-                <div class="newsletter">
-                    <h3 class="newsletter__title">Подписка на рассылку</h3>
-                    <input type="email" placeholder="Ваш email" class="newsletter__input">
-                    <button class="button button--subscribe">Подписаться</button>
+            <div class="container">
+                <h2 class="contact__title">Контакты</h2>
+                <div class="contact__content contact-grid">
+                    <div class="contact-info">
+                        <h3 class="contact-info__subtitle">Адрес</h3>
+                        <p class="contact-info__text">г. Москва, ул. Табуреточная, д. 5</p>
+                        <h3 class="contact-info__subtitle">Телефон</h3>
+                        <p class="contact-info__text">+7 (495) 123-45-67</p>
+                        <h3 class="contact-info__subtitle">Email</h3>
+                        <p class="contact-info__text">info@taburetka.ru</p>
+                    </div>
+                    <div class="newsletter">
+                        <h3 class="newsletter__title">Подписка на рассылку</h3>
+                        <input type="email" placeholder="Ваш email" class="newsletter__input">
+                        <button class="button button--subscribe">Подписаться</button>
+                    </div>
                 </div>
             </div>
         </section>
@@ -194,5 +220,8 @@
             </div>
         </div>
     </footer>
+
+    <!-- Подключение JavaScript -->
+    <script src="menu.js"></script>
 </body>
 </html>
