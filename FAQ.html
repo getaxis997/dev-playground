@@ -301,35 +301,46 @@
         </div>
     </footer>
 
-    <!-- JavaScript -->
+       <!-- JavaScript -->
     <script src="menu.js"></script>
     <script>
         // Функция для открытия/закрытия аккордеона
         function toggleFaq(header) {
+            // Находим родительский карточный элемент
             const card = header.closest('.card');
+            // Находим блок с содержимым, который нужно показать/скрыть
             const content = card.querySelector('.card-content');
+            // Находим иконку внутри заголовка, по которому кликнули
             const icon = header.querySelector('.fa-chevron-down, .fa-chevron-up');
-            
-            // Закрываем все другие открытые элементы
+
+            // Закрываем все другие открытые элементы, кроме текущего
             document.querySelectorAll('.card-content').forEach(item => {
+                // Если это не текущий контент и он не скрыт
                 if (item !== content && !item.classList.contains('is-hidden')) {
-                    item.classList.add('is-hidden');
-                    const otherIcon = item.closest('.card').querySelector('.fa-chevron-up, .fa-chevron-down');
-                    if (otherIcon) {
-                        otherIcon.classList.remove('fa-chevron-up');
-                        otherIcon.classList.add('fa-chevron-down');
+                    item.classList.add('is-hidden'); // Скрываем его
+                    // Меняем иконку у соответствующего заголовка обратно на "вниз"
+                    const otherHeader = item.closest('.card').querySelector('.card-header');
+                    if (otherHeader) {
+                        const otherIcon = otherHeader.querySelector('.fa-chevron-up, .fa-chevron-down');
+                        if (otherIcon) {
+                            otherIcon.classList.remove('fa-chevron-up');
+                            otherIcon.classList.add('fa-chevron-down');
+                        }
                     }
                 }
             });
-            
-            // Открываем/закрываем текущий
+
+            // Переключаем класс is-hidden для текущего контента (показываем/скрываем)
             content.classList.toggle('is-hidden');
-            
+
+            // Меняем иконку текущего элемента
             if (icon) {
                 if (content.classList.contains('is-hidden')) {
+                    // Если контент скрыт, иконка должна смотреть вниз
                     icon.classList.remove('fa-chevron-up');
                     icon.classList.add('fa-chevron-down');
                 } else {
+                    // Если контент открыт, иконка должна смотреть вверх
                     icon.classList.remove('fa-chevron-down');
                     icon.classList.add('fa-chevron-up');
                 }
