@@ -3,225 +3,365 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Табуретка для кокетки</title>
+    <title>Табуретка для кокетки | Минималистичный лендинг</title>
+    <!-- Bulma CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
+    <!-- Font Awesome для иконок -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <!-- Дополнительные кастомные стили -->
     <link rel="stylesheet" href="style.css">
-    <!-- Подключение шрифтов -->
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Кнопка "Наверх" -->
     <button class="scroll-top" id="scrollTop" aria-label="Наверх">
-        ↑
+        <i class="fas fa-arrow-up"></i>
     </button>
 
-    <header class="header">
+    <!-- Хедер с навигацией -->
+    <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
         <div class="container">
-            <div class="header__inner">
-                <div class="logo">
-                    <img src="./assets/img/logo.png" alt="Логотип компании Табуретка для кокетки" class="logo__image">
+            <div class="navbar-brand">
+                <a class="navbar-item" href="#">
+                    <img src="./assets/img/logo.png" alt="Табуретка для кокетки" height="50">
+                </a>
+
+                <a role="button" class="navbar-burger" id="menuToggle" aria-label="menu" aria-expanded="false" data-target="mainNav">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </a>
+            </div>
+
+            <div id="mainNav" class="navbar-menu">
+                <div class="navbar-end">
+                    <a href="#about" class="navbar-item">О нас</a>
+                    <a href="#services" class="navbar-item">Услуги</a>
+                    <a href="#portfolio" class="navbar-item">Портфолио</a>
+                    <a href="#contact" class="navbar-item">Контакты</a>
+                    <div class="navbar-item">
+                        <div class="buttons">
+                            <button class="button is-primary is-medium">Заказать</button>
+                        </div>
+                    </div>
                 </div>
-
-                <!-- Гамбургер-кнопка -->
-                <button class="menu-toggle" id="menuToggle" aria-label="Открыть меню" aria-expanded="false">
-                    <span class="menu-toggle__line"></span>
-                    <span class="menu-toggle__line"></span>
-                    <span class="menu-toggle__line"></span>
-                </button>
-
-                <nav class="navigation" id="mainNav">
-                    <ul class="navigation__list">
-                        <li class="navigation__item"><a href="#about" class="navigation__link">О нас</a></li>
-                        <li class="navigation__item"><a href="#services" class="navigation__link">Услуги</a></li>
-                        <li class="navigation__item"><a href="#portfolio" class="navigation__link">Портфолио</a></li>
-                        <li class="navigation__item"><a href="#contact" class="navigation__link">Контакты</a></li>
-                    </ul>
-                    <!-- Кнопка CTA (только для десктопа) -->
-                    <button class="button button--cta">Заказать</button>
-                </nav>
             </div>
         </div>
-    </header>
-    
+    </nav>
+
     <main class="main">
-        <section class="hero">
-            <div class="container">
-                <h1 class="hero__title">Табуретки для кокетки</h1>
+        <!-- Hero секция с Bulma -->
+        <section class="hero is-primary is-medium">
+            <div class="hero-body">
+                <div class="container has-text-centered">
+                    <h1 class="title is-1 has-text-white">
+                        Табуретки для кокетки
+                    </h1>
+                    <h2 class="subtitle is-4 has-text-white-bis">
+                        Ручная работа с душой
+                    </h2>
+                    <button class="button is-light is-large">
+                        <span>Смотреть коллекцию</span>
+                        <span class="icon">
+                            <i class="fas fa-arrow-right"></i>
+                        </span>
+                    </button>
+                </div>
             </div>
         </section>
 
-        <section id="about" class="about">
+        <!-- About секция -->
+        <section id="about" class="section">
             <div class="container">
-                <h2 class="about__title">Табуретка &laquo;ручной работы&raquo;</h2>
-                <div class="about__content content-grid">
-                    <div class="about__text-wrapper">
-                        <p class="about__text">Безусловно, существующая теория прекрасно подходит для реализации глубокомысленных рассуждений. 
-                            Банальные, но&nbsp;неопровержимые выводы, а&nbsp;также сторонники тоталитаризма в&nbsp;науке, вне 
-                            зависимости от&nbsp;их&nbsp;уровня, должны быть подвергнуты целой серии независимых исследований. 
-                            Ясность нашей позиции очевидна: укрепление и&nbsp;развитие внутренней структуры обеспечивает широкому 
-                            кругу (специалистов) участие в&nbsp;формировании дальнейших направлений развития. Учитывая ключевые 
-                            сценарии поведения, реализация намеченных плановых заданий требует от&nbsp;нас анализа вывода текущих 
-                            активов.</p>
-                    </div>
-                    <img src="./assets/img/RightImage.png" alt="Табуретка в интерьере" class="about__image">
-                </div>
+                <h2 class="title is-2 has-text-centered mb-6 has-text-primary-dark">Табуретка &laquo;ручной работы&raquo;</h2>
                 
-                <div class="card-container">
-                    <div class="card card--about">
-                        <h3 class="card__title">Кокетки для табуретки</h3>
-                        <p class="card__text">Услуга по изготовлению табуреток на заказ</p>
+                <div class="columns is-vcentered is-multiline">
+                    <div class="column is-6">
+                        <div class="content is-medium">
+                            <p>Безусловно, существующая теория прекрасно подходит для реализации глубокомысленных рассуждений. 
+                                Банальные, но&nbsp;неопровержимые выводы, а&nbsp;также сторонники тоталитаризма в&nbsp;науке, вне 
+                                зависимости от&nbsp;их&nbsp;уровня, должны быть подвергнуты целой серии независимых исследований.</p>
+                            <p>Ясность нашей позиции очевидна: укрепление и&nbsp;развитие внутренней структуры обеспечивает широкому 
+                                кругу (специалистов) участие в&nbsp;формировании дальнейших направлений развития.</p>
+                        </div>
+                    </div>
+                    <div class="column is-6">
+                        <figure class="image is-4by3">
+                            <img src="./assets/img/RightImage.png" alt="Табуретка в интерьере" class="is-rounded">
+                        </figure>
+                    </div>
+                </div>
+
+                <div class="columns is-centered mt-6">
+                    <div class="column is-8">
+                        <div class="box has-text-centered p-6">
+                            <h3 class="title is-3 has-text-primary">Кокетки для табуретки</h3>
+                            <p class="subtitle is-5">Услуга по изготовлению табуреток на заказ</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="services" class="services">
+        <!-- Services секция -->
+        <section id="services" class="section has-background-light">
             <div class="container">
-                <h2 class="services__title">Почему &quot;Табуретки для&nbsp;кокетки&quot;</h2>
-                <div class="services__features">
-                    <div class="feature">
-                        <img src="./assets/icons/Delivery.png" alt="Иконка доставки" class="feature__icon">
-                        <span class="feature__text">Сложно сказать, почему преступность никогда не&nbsp;была такой неорганизованной.</span>
+                <h2 class="title is-2 has-text-centered mb-6 has-text-primary-dark">Почему "Табуретки для&nbsp;кокетки"</h2>
+                
+                <div class="columns is-multiline">
+                    <div class="column is-4">
+                        <div class="box has-text-centered p-5" style="height: 100%;">
+                            <span class="icon is-large mb-4">
+                                <i class="fas fa-truck fa-3x has-text-primary"></i>
+                            </span>
+                            <p>Доставка быстрая и дешевая.</p>
+                        </div>
                     </div>
-                    <div class="feature">
-                        <img src="./assets/icons/Delivery.png" alt="Иконка гарантии" class="feature__icon">
-                        <span class="feature__text">Кстати, активно развивающиеся страны третьего мира, которые представляют собой яркий 
-                            пример континентально-европейского типа политической культуры, будут заблокированы в рамках своих 
-                            собственных рациональных ограничений.</span>
+                    <div class="column is-4">
+                        <div class="box has-text-centered p-5" style="height: 100%;">
+                            <span class="icon is-large mb-4">
+                                <i class="fas fa-shield-alt fa-3x has-text-primary"></i>
+                            </span>
+                            <p>Надежность - ваш комфорт в надежных руках!.</p>
+                        </div>
                     </div>
-                    <div class="feature">
-                        <img src="./assets/icons/Delivery.png" alt="Иконка качества" class="feature__icon">
-                        <span class="feature__text">С&nbsp;учётом сложившейся международной обстановки, внедрение современных методик
-                            требует определения и&nbsp;уточнения кластеризации усилий.</span>
+                    <div class="column is-4">
+                        <div class="box has-text-centered p-5" style="height: 100%;">
+                            <span class="icon is-large mb-4">
+                                <i class="fas fa-star fa-3x has-text-primary"></i>
+                            </span>
+                            <p>Качество наших товаров - наша гордость!.</p>
+                        </div>
                     </div>
                 </div>
-                <button class="button button--interactive">Интерактивная кнопка</button>
-            </div>
-        </section>
 
-        <section id="portfolio" class="portfolio">
-            <div class="container">
-                <h2 class="portfolio__title">Коллекция Зима-Лето 2026</h2>
-                <div class="products products--collection">
-                    <div class="product">
-                        <img src="./assets/img/Photo(1).png" alt="Ваза алюминиевая" class="product__image">
-                        <h3 class="product__title">Ваза алюминиевая</h3>
-                        <p class="product__price">267 р.</p>
-                    </div>
-                    <div class="product">
-                        <img src="./assets/img/Photo(2).png" alt="Лампа энергоэффективная" class="product__image">
-                        <h3 class="product__title">Лампа энергоэффективная</h3>
-                        <p class="product__price">155 р.</p>
-                    </div>
-                    <div class="product">
-                        <img src="./assets/img/Photo(3).png" alt="Стул из дуба б/у" class="product__image">
-                        <h3 class="product__title">Стул из дуба б/у</h3>
-                        <p class="product__price">125 р.</p>
-                    </div>
-                    <div class="product">
-                        <img src="./assets/img/Photo.png" alt="Стул из сосны" class="product__image">
-                        <h3 class="product__title">Стул из сосны</h3>
-                        <p class="product__price">399 р.</p>
-                    </div>
-                </div>
-                <button class="button button--buy-all">Купить все</button>
-
-                <h2 class="portfolio__title portfolio__title--popular">Самые ходовые модели</h2>
-                <div class="products products--popular">
-                    <div class="product">
-                        <img src="./assets/img/Large.png" alt="Диван" class="product__image">
-                        <h3 class="product__title">Диван</h3>
-                        <p class="product__price">250000 р.</p>
-                    </div>
-                    <div class="product">
-                        <img src="./assets/img/Photo(2).png" alt="Лампа сверхэффективная" class="product__image">
-                        <h3 class="product__title">Лампа сверхэффективная</h3>
-                        <p class="product__price">155 р.</p>
-                    </div>
-                    <div class="product">
-                        <img src="./assets/img/Photo(3).png" alt="Стул из дуба б/у" class="product__image">
-                        <h3 class="product__title">Стул из дуба б/у</h3>
-                        <p class="product__price">125 р.</p>
-                    </div>
-                </div>
-                <button class="button button--buy-all">Купить все</button>
-            </div>
-        </section>
-
-        <section class="club">
-            <div class="container">
-                <div class="club__card">
-                    <h2 class="club__title">Клубная карта</h2>
-                    <p class="club__text">В&nbsp;целом, конечно, начало повседневной работы по&nbsp;формированию позиции требует определения
-                        и&nbsp;уточнения новых предложений. Современные технологии достигли такого уровня, что убеждённость
-                        некоторых оппонентов не&nbsp;даёт нам иного выбора, кроме определения укрепления моральных ценностей.
-                        Задача организации, в&nbsp;особенности&nbsp;же укрепление и&nbsp;развитие внутренней структуры
-                        способствует повышению качества новых принципов формирования материально-технической и&nbsp;кадровой
-                        базы.</p>
-                    <button class="button button--club">Всего от 399 руб/сутки</button>
+                <div class="has-text-centered mt-6">
+                    <button class="button is-primary is-large">Интерактивная кнопка</button>
                 </div>
             </div>
         </section>
 
-        <section id="contact" class="contact">
+        <!-- Portfolio секция -->
+        <section id="portfolio" class="section">
             <div class="container">
-                <h2 class="contact__title">Контакты</h2>
-                <div class="contact__content contact-grid">
-                    <div class="contact-info">
-                        <h3 class="contact-info__subtitle">Адрес</h3>
-                        <p class="contact-info__text">г. Москва, ул. Табуреточная, д. 5</p>
-                        <h3 class="contact-info__subtitle">Телефон</h3>
-                        <p class="contact-info__text">+7 (495) 123-45-67</p>
-                        <h3 class="contact-info__subtitle">Email</h3>
-                        <p class="contact-info__text">info@taburetka.ru</p>
+                <h2 class="title is-2 has-text-centered mb-6 has-text-primary-dark">Коллекция Зима-Лето 2026</h2>
+                
+                <div class="columns is-multiline">
+                    <div class="column is-3">
+                        <div class="card">
+                            <div class="card-image">
+                                <figure class="image is-square">
+                                    <img src="./assets/img/Photo(1).png" alt="Ваза алюминиевая">
+                                </figure>
+                            </div>
+                            <div class="card-content has-text-centered">
+                                <h3 class="title is-5">Ваза алюминиевая</h3>
+                                <p class="title is-4 has-text-primary">267 р.</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="newsletter">
-                        <h3 class="newsletter__title">Подписка на рассылку</h3>
-                        <input type="email" placeholder="Ваш email" class="newsletter__input">
-                        <button class="button button--subscribe">Подписаться</button>
+                    <div class="column is-3">
+                        <div class="card">
+                            <div class="card-image">
+                                <figure class="image is-square">
+                                    <img src="./assets/img/Photo(2).png" alt="Лампа энергоэффективная">
+                                </figure>
+                            </div>
+                            <div class="card-content has-text-centered">
+                                <h3 class="title is-5">Лампа энергоэффективная</h3>
+                                <p class="title is-4 has-text-primary">155 р.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column is-3">
+                        <div class="card">
+                            <div class="card-image">
+                                <figure class="image is-square">
+                                    <img src="./assets/img/Photo(3).png" alt="Стул из дуба б/у">
+                                </figure>
+                            </div>
+                            <div class="card-content has-text-centered">
+                                <h3 class="title is-5">Стул из дуба б/у</h3>
+                                <p class="title is-4 has-text-primary">125 р.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column is-3">
+                        <div class="card">
+                            <div class="card-image">
+                                <figure class="image is-square">
+                                    <img src="./assets/img/Photo.png" alt="Стул из сосны">
+                                </figure>
+                            </div>
+                            <div class="card-content has-text-centered">
+                                <h3 class="title is-5">Стул из сосны</h3>
+                                <p class="title is-4 has-text-primary">399 р.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="has-text-centered mt-5">
+                    <button class="button is-primary is-large">Купить все</button>
+                </div>
+
+                <h2 class="title is-2 has-text-centered mt-6 mb-6 has-text-primary-dark">Самые ходовые модели</h2>
+                
+                <div class="columns is-multiline">
+                    <div class="column is-4">
+                        <div class="card">
+                            <div class="card-image">
+                                <figure class="image is-square">
+                                    <img src="./assets/img/Large.png" alt="Диван">
+                                </figure>
+                            </div>
+                            <div class="card-content has-text-centered">
+                                <h3 class="title is-5">Диван</h3>
+                                <p class="title is-4 has-text-primary">250000 р.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column is-4">
+                        <div class="card">
+                            <div class="card-image">
+                                <figure class="image is-square">
+                                    <img src="./assets/img/Photo(2).png" alt="Лампа сверхэффективная">
+                                </figure>
+                            </div>
+                            <div class="card-content has-text-centered">
+                                <h3 class="title is-5">Лампа сверхэффективная</h3>
+                                <p class="title is-4 has-text-primary">155 р.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column is-4">
+                        <div class="card">
+                            <div class="card-image">
+                                <figure class="image is-square">
+                                    <img src="./assets/img/Photo(3).png" alt="Стул из дуба б/у">
+                                </figure>
+                            </div>
+                            <div class="card-content has-text-centered">
+                                <h3 class="title is-5">Стул из дуба б/у</h3>
+                                <p class="title is-4 has-text-primary">125 р.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="has-text-centered mt-5">
+                    <button class="button is-primary is-large">Купить все</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Club секция -->
+        <section class="section has-background-primary">
+            <div class="container">
+                <div class="box has-text-centered p-6" style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px);">
+                    <h2 class="title is-2 has-text-white">Клубная карта</h2>
+                    <div class="content has-text-white">
+                        <p>В&nbsp;целом, конечно, начало повседневной работы по&nbsp;формированию позиции требует определения
+                            и&nbsp;уточнения новых предложений. Современные технологии достигли такого уровня, что убеждённость
+                            некоторых оппонентов не&nbsp;даёт нам иного выбора, кроме определения укрепления моральных ценностей.</p>
+                    </div>
+                    <button class="button is-light is-large">Всего от 399 руб/сутки</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact секция -->
+        <section id="contact" class="section has-background-light">
+            <div class="container">
+                <h2 class="title is-2 has-text-centered mb-6 has-text-primary-dark">Контакты</h2>
+                
+                <div class="columns">
+                    <div class="column is-6">
+                        <div class="box p-6">
+                            <h3 class="title is-4 has-text-primary">Адрес</h3>
+                            <p class="subtitle is-6 mb-4">г. Москва, ул. Табуреточная, д. 5</p>
+                            
+                            <h3 class="title is-4 has-text-primary">Телефон</h3>
+                            <p class="subtitle is-6 mb-4">+7 (495) 123-45-67</p>
+                            
+                            <h3 class="title is-4 has-text-primary">Email</h3>
+                            <p class="subtitle is-6">info@taburetka.ru</p>
+                        </div>
+                    </div>
+                    
+                    <div class="column is-6">
+                        <div class="box p-6">
+                            <h3 class="title is-4 has-text-primary">Подписка на рассылку</h3>
+                            <div class="field">
+                                <div class="control">
+                                    <input class="input is-medium" type="email" placeholder="Ваш email">
+                                </div>
+                            </div>
+                            <div class="field">
+                                <div class="control">
+                                    <button class="button is-primary is-medium is-fullwidth">Подписаться</button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer class="footer">
+    <!-- Футер -->
+    <footer class="footer has-background-primary has-text-white">
         <div class="container">
-            <div class="footer__grid">
-                <div class="footer-section">
-                    <h3 class="footer-section__title">О нас</h3>
-                    <p class="footer-section__text">Содержание раздела о компании...</p>
+            <div class="columns is-multiline">
+                <div class="column is-3">
+                    <h4 class="title is-5 has-text-white">О нас</h4>
+                    <p class="has-text-white-light">Содержание раздела о компании...</p>
                 </div>
-                <div class="footer-section">
-                    <h3 class="footer-section__title">Услуги</h3>
-                    <p class="footer-section__text">Описание предоставляемых услуг...</p>
+                <div class="column is-3">
+                    <h4 class="title is-5 has-text-white">Услуги</h4>
+                    <p class="has-text-white-light">Описание предоставляемых услуг...</p>
                 </div>
-                <div class="footer-section">
-                    <h3 class="footer-section__title">Портфолио</h3>
-                    <p class="footer-section__text">Примеры выполненных работ...</p>
+                <div class="column is-3">
+                    <h4 class="title is-5 has-text-white">Портфолио</h4>
+                    <p class="has-text-white-light">Примеры выполненных работ...</p>
                 </div>
-                <div class="footer-section">
-                    <h3 class="footer-section__title">Полезные ссылки</h3>
-                    <ul class="footer-section__list">
-                        <li class="footer-section__item"><a href="#" class="footer-section__link">Доставка и оплата</a></li>
-                        <li class="footer-section__item"><a href="#" class="footer-section__link">Гарантии</a></li>
-                        <li class="footer-section__item"><a href="#" class="footer-section__link">Возврат</a></li>
-                        <li class="footer-section__item"><a href="#" class="footer-section__link">Политика конфиденциальности</a></li>
+                <div class="column is-3">
+                    <h4 class="title is-5 has-text-white">Полезные ссылки</h4>
+                    <ul class="has-text-white-light">
+                        <li><a href="#" class="has-text-white-light">Доставка и оплата</a></li>
+                        <li><a href="#" class="has-text-white-light">Гарантии</a></li>
+                        <li><a href="#" class="has-text-white-light">Возврат</a></li>
+                        <li><a href="#" class="has-text-white-light">Политика конфиденциальности</a></li>
                     </ul>
                 </div>
             </div>
             
-            <div class="social-container">
-                <div class="social-icons">
-                    <img src="./assets/icons/Search.png" alt="Поиск" class="social-icons__icon">
-                    <img src="./assets/icons/Purchase.png" alt="Покупки" class="social-icons__icon">
-                    <img src="./assets/icons/Sprout.png" alt="Развитие" class="social-icons__icon">
+            <div class="has-text-centered mt-6">
+                <div class="is-flex is-justify-content-center mb-4">
+                    <a href="#" class="has-text-white mx-3">
+                        <span class="icon is-large">
+                            <i class="fab fa-facebook fa-2x"></i>
+                        </span>
+                    </a>
+                    <a href="#" class="has-text-white mx-3">
+                        <span class="icon is-large">
+                            <i class="fab fa-instagram fa-2x"></i>
+                        </span>
+                    </a>
+                    <a href="#" class="has-text-white mx-3">
+                        <span class="icon is-large">
+                            <i class="fab fa-telegram fa-2x"></i>
+                        </span>
+                    </a>
                 </div>
-                <p class="social-container__copyright">&copy; 1880 - 2025 Men's taburets. Все права защищены.</p>
+                <p class="has-text-white-light">&copy; 1880 - 2025 Men's taburets. Все права защищены.</p>
             </div>
         </div>
     </footer>
 
-    <!-- Подключение JavaScript -->
+    <!-- JavaScript -->
     <script src="menu.js"></script>
 </body>
 </html>
