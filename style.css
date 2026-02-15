@@ -1,6 +1,7 @@
 /* === Кастомные стили поверх Bulma === */
 :root {
     --primary-color: #2c5530;
+    --primary-dark: #1a3a1e;
 }
 
 /* Дополнительные настройки */
@@ -21,17 +22,33 @@ body {
     background-color: var(--primary-color) !important;
 }
 
+/* Темно-зеленый цвет для заголовков */
+.has-text-primary-dark {
+    color: var(--primary-dark) !important;
+}
+
+/* Стили для всех заголовков h2 по умолчанию */
+.title.is-2 {
+    color: var(--primary-dark);
+}
+
+/* Сохраняем белые заголовки на темном фоне */
+.has-background-primary .title.is-2,
+.has-background-primary .title {
+    color: white !important;
+}
+
 .button.is-primary {
     background-color: var(--primary-color);
 }
 
 .button.is-primary:hover {
-    background-color: #1e3a23;
+    background-color: var(--primary-dark);
 }
 
 /* Hero секция */
 .hero.is-primary {
-    background: linear-gradient(135deg, var(--primary-color) 0%, #1a3a1e 100%);
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
 }
 
 /* Карточки */
@@ -109,7 +126,7 @@ body {
 }
 
 .scroll-top:hover {
-    background: #1e3a23;
+    background: var(--primary-dark);
     transform: scale(1.1);
 }
 
