@@ -2,6 +2,7 @@
 :root {
     --primary-color: #2c5530;
     --primary-dark: #1a3a1e;
+    --primary-light: #e8f0e9;
 }
 
 /* Дополнительные настройки */
@@ -11,6 +12,7 @@ html {
 
 body {
     font-family: 'Inter', sans-serif;
+    padding-top: 0;
 }
 
 /* Кастомные цвета для Bulma */
@@ -89,11 +91,33 @@ body {
 .navbar-item {
     font-weight: 500;
     transition: color 0.3s ease;
+    color: #333 !important;
 }
 
 .navbar-item:hover {
     color: var(--primary-color) !important;
     background: transparent !important;
+}
+
+/* Исправление цвета для активных пунктов меню */
+.navbar-item.is-active {
+    color: var(--primary-color) !important;
+    font-weight: 600;
+    background: transparent !important;
+    border-bottom: 2px solid var(--primary-color);
+}
+
+/* Убираем синий цвет у посещенных ссылок */
+.navbar-item:visited,
+.navbar-item:link,
+.navbar-item:active {
+    color: #333 !important;
+}
+
+.navbar-item.is-active:visited,
+.navbar-item.is-active:link,
+.navbar-item.is-active:active {
+    color: var(--primary-color) !important;
 }
 
 /* Кнопка "Наверх" */
@@ -130,93 +154,7 @@ body {
     transform: scale(1.1);
 }
 
-/* Адаптивные корректировки */
-@media (max-width: 768px) {
-    .navbar-brand {
-        min-height: 70px;
-    }
-    
-    .navbar-burger {
-        height: 70px;
-        width: 70px;
-    }
-    
-    .section {
-        padding: 3rem 1.5rem;
-    }
-    
-    .hero.is-medium .hero-body {
-        padding: 6rem 1.5rem;
-    }
-    
-    .scroll-top {
-        width: 48px;
-        height: 48px;
-        bottom: 20px;
-        right: 20px;
-        font-size: 20px;
-    }
-}
-
-@media (max-width: 480px) {
-    .title.is-1 {
-        font-size: 2.5rem;
-    }
-    
-    .title.is-2 {
-        font-size: 2rem;
-    }
-    
-    .hero.is-medium .hero-body {
-        padding: 4rem 1.5rem;
-    }
-    
-    .box {
-        padding: 1.5rem !important;
-    }
-}
-
-/* Утилиты для отступов */
-.mt-6 {
-    margin-top: 3rem;
-}
-
-.mb-6 {
-    margin-bottom: 3rem;
-}
-
-/* Изображения */
-.image.is-rounded img {
-    border-radius: 12px;
-}
-
-/* Иконки */
-.icon.is-large {
-    width: 64px;
-    height: 64px;
-}
-
-/* Ссылки в футере */
-.footer a {
-    transition: opacity 0.3s ease, padding-left 0.3s ease;
-    display: inline-block;
-    padding: 0.3rem 0;
-}
-
-.footer a:hover {
-    opacity: 1;
-    color: white !important;
-    padding-left: 10px;
-}
-
-/* Социальные иконки в футере */
-.footer .icon.is-large {
-    transition: transform 0.3s ease;
-}
-
-.footer .icon.is-large:hover {
-    transform: scale(1.1);
-}/* Стили для аккордеона */
+/* Стили для аккордеона */
 .card-header {
     cursor: pointer;
     transition: background-color 0.3s ease;
@@ -240,20 +178,6 @@ body {
 
 .card-content {
     transition: all 0.3s ease;
-}
-
-/* Стили для активного пункта меню */
-.navbar-item.is-active {
-    color: var(--primary-color) !important;
-    font-weight: 600;
-    border-bottom: 2px solid var(--primary-color);
-}
-
-@media (max-width: 1024px) {
-    .navbar-item.is-active {
-        border-bottom: none;
-        background-color: var(--primary-light);
-    }
 }
 
 /* Стили для формы */
@@ -291,4 +215,130 @@ body {
 
 .media:hover .media-left .icon {
     transform: scale(1.1);
+}
+
+/* Адаптивные корректировки */
+@media (max-width: 1024px) {
+    .navbar-item.is-active {
+        border-bottom: none;
+        background-color: var(--primary-light) !important;
+        color: var(--primary-dark) !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar-brand {
+        min-height: 70px;
+    }
+    
+    .navbar-burger {
+        height: 70px;
+        width: 70px;
+    }
+    
+    .section {
+        padding: 3rem 1.5rem;
+    }
+    
+    .hero.is-medium .hero-body {
+        padding: 6rem 1.5rem;
+    }
+    
+    .scroll-top {
+        width: 48px;
+        height: 48px;
+        bottom: 20px;
+        right: 20px;
+        font-size: 20px;
+    }
+    
+    /* Исправление для заголовка на странице контактов */
+    .hero.is-primary .hero-body {
+        padding-top: 6rem !important;
+        padding-bottom: 3rem !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .title.is-1 {
+        font-size: 2.5rem;
+    }
+    
+    .title.is-2 {
+        font-size: 2rem;
+    }
+    
+    .hero.is-medium .hero-body {
+        padding: 4rem 1.5rem;
+    }
+    
+    .box {
+        padding: 1.5rem !important;
+    }
+    
+    .hero.is-primary .hero-body {
+        padding-top: 5rem !important;
+    }
+}
+
+/* Утилиты для отступов */
+.mt-6 {
+    margin-top: 3rem;
+}
+
+.mb-6 {
+    margin-bottom: 3rem;
+}
+
+/* Изображения */
+.image.is-rounded img {
+    border-radius: 12px;
+}
+
+/* Иконки */
+.icon.is-large {
+    width: 64px;
+    height: 64px;
+}
+
+/* Ссылки в футере */
+.footer a {
+    transition: opacity 0.3s ease, padding-left 0.3s ease;
+    display: inline-block;
+    padding: 0.3rem 0;
+    color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.footer a:hover {
+    opacity: 1;
+    color: white !important;
+    padding-left: 10px;
+}
+
+/* Социальные иконки в футере */
+.footer .icon.is-large {
+    transition: transform 0.3s ease;
+}
+
+.footer .icon.is-large:hover {
+    transform: scale(1.1);
+}
+
+/* Стили для всех ссылок */
+a {
+    color: var(--primary-color);
+    transition: color 0.3s ease;
+}
+
+a:visited {
+    color: var(--primary-color);
+}
+
+a:hover {
+    color: var(--primary-dark);
+}
+
+/* Стили для hero на всех страницах */
+.hero.is-primary .hero-body {
+    padding-top: 7rem !important;
 }

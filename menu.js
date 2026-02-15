@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
     // Плавный скролл к якорям (только на главной странице)
-    if (window.location.pathname.endsWith('index.html') || window.location.pathname === '/') {
+    if (window.location.pathname.endsWith('index.html') || window.location.pathname === '/' || window.location.pathname === '') {
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -68,11 +68,23 @@ document.addEventListener('DOMContentLoaded', () => {
         if (href) {
             // Убираем якоря из сравнения
             const cleanHref = href.split('#')[0];
-            const cleanCurrentPath = currentPath.split('#')[0];
+            let cleanCurrentPath = currentPath.split('#')[0];
             
-            if ((cleanCurrentPath.endsWith(cleanHref) && cleanHref !== '') || 
-                (cleanCurrentPath === '/' && cleanHref === 'index.html') ||
-                (cleanCurrentPath.endsWith('/') && cleanHref === 'index.html')) {
+            // Убираем ведущий слеш для сравнения
+            if (cleanCurrentPath.startsWith('/')) {
+                cleanCurrentPath = cleanCurrentPath.substring(1);
+            }
+            
+            // Определяем текущую страницу
+            let currentPage = cleanCurrentPath;
+            if (currentPage === '' || currentPage === 'index.html') {
+                currentPage = 'index.html';
+            }
+            
+            // Сравниваем
+            if ((currentPage === cleanHref) || 
+                (currentPage === '' && cleanHref === 'index.html') ||
+                (currentPage === '/' && cleanHref === 'index.html')) {
                 item.classList.add('is-active');
             } else {
                 item.classList.remove('is-active');
