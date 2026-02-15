@@ -1,71 +1,59 @@
-// Получаем элементы меню
-const menuToggle = document.getElementById('menuToggle');
-const mainNav = document.getElementById('mainNav');
-const scrollTopButton = document.getElementById('scrollTop');
-
-// Создаем оверлей для меню
-const navOverlay = document.createElement('div');
-navOverlay.className = 'nav-overlay';
-document.body.appendChild(navOverlay);
-
-// Функция открытия/закрытия меню
-function toggleMenu() {
-    const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
-
-    // Переключаем состояния
-    menuToggle.classList.toggle('active');
-    menuToggle.setAttribute('aria-expanded', !isExpanded);
-    mainNav.classList.toggle('active');
-    navOverlay.classList.toggle('active');
-
-    // Блокируем скролл при открытом меню
-    document.body.style.overflow = mainNav.classList.contains('active') ? 'hidden' : '';
-}
-
-// Обработчики событий для меню
-menuToggle.addEventListener('click', toggleMenu);
-navOverlay.addEventListener('click', toggleMenu);
-
-// Закрытие меню при клике на ссылку (на мобильных)
-const navLinks = document.querySelectorAll('.navigation__link');
-navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-        if (window.innerWidth <= 768) {
-            toggleMenu();
+// Бургер-меню для Bulma
+document.addEventListener('DOMContentLoaded', () => {
+    // Кнопка "Наверх"
+    const scrollTop = document.getElementById('scrollTop');
+    
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+            scrollTop.classList.add('visible');
+        } else {
+            scrollTop.classList.remove('visible');
         }
     });
-});
-
-// Кнопка "Наверх" - показываем после скролла
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 300) {
-        scrollTopButton.classList.add('visible');
-    } else {
-        scrollTopButton.classList.remove('visible');
-    }
-});
-
-// Прокрутка к началу страницы
-scrollTopButton.addEventListener('click', () => {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
+    
+    scrollTop.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
     });
-});
 
-// Закрытие меню при ресайзе окна (если перешли на десктоп)
-window.addEventListener('resize', () => {
-    if (window.innerWidth > 768) {
-        if (mainNav.classList.contains('active')) {
-            toggleMenu();
-        }
+    // Бургер-меню
+    const menuToggle = document.getElementById('menuToggle');
+    const mainNav = document.getElementById('mainNav');
+    
+    if (menuToggle && mainNav) {
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('is-active');
+            mainNav.classList.toggle('is-active');
+            
+            // Обновление aria-expanded
+            const isExpanded = menuToggle.classList.contains('is-active');
+            menuToggle.setAttribute('aria-expanded', isExpanded);
+        });
+        
+        // Закрытие меню при клике на ссылку
+        const navLinks = mainNav.querySelectorAll('.navbar-item');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menuToggle.classList.remove('is-active');
+                mainNav.classList.remove('is-active');
+                menuToggle.setAttribute('aria-expanded', false);
+            });
+        });
     }
-});
-
-// Проверка accessibility - минимальный размер тач-целей
-document.querySelectorAll('button, a, input[type="submit"]').forEach(element => {
-    const rect = element.getBoundingClientRect();
-    if (rect.width < 44 || rect.height < 44) {
-        console.warn('Элемент имеет слишком маленькую тач-зону:', element);
-    }
+    
+    // Плавный скролл к якорям
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
 });
