@@ -19,6 +19,7 @@
             align-items: center;
             justify-content: center;
             background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 2rem;
         }
         .error-number {
             font-size: 12rem;
@@ -29,6 +30,7 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
             animation: bounce 2s ease infinite;
+            margin-bottom: 1rem;
         }
         @keyframes bounce {
             0%, 100% { transform: translateY(0); }
@@ -41,6 +43,15 @@
             margin: 2rem auto;
             border-radius: 2px;
         }
+        .taburetka-emoji {
+            font-size: 5rem;
+            margin-bottom: 1rem;
+            animation: spin 4s linear infinite;
+        }
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
     </style>
 </head>
 <body>
@@ -49,28 +60,49 @@
             <div class="columns is-centered">
                 <div class="column is-8">
                     <div class="box p-6 has-text-centered">
+                        <div class="taburetka-emoji">
+                            🪑
+                        </div>
+                        
                         <div class="error-number">404</div>
                         
                         <h1 class="title is-2 has-text-primary-dark">
-                            Ой! Страница не найдена
+                            Упс! Табуретка не найдена
                         </h1>
                         
                         <div class="error-divider"></div>
                         
                         <p class="subtitle is-5 mb-5">
-                            Кажется, эта страница была удалена или перемещена.<br>
-                            Но не расстраивайтесь, у нас есть много интересного!
+                            Кажется, эта табуретка убежала гулять или мы её ещё не сделали.<br>
+                            Но у нас есть много других замечательных табуреток!
                         </p>
                         
+                        <div class="message is-warning">
+                            <div class="message-body">
+                                <span class="icon">
+                                    <i class="fas fa-info-circle"></i>
+                                </span>
+                                <strong>Подсказка:</strong> Кнопка "Купить все" временно не работает - мы готовим для вас что-то особенное!
+                            </div>
+                        </div>
+                        
                         <div class="columns is-centered mt-6">
-                            <div class="column is-6">
-                                <div class="field is-grouped is-grouped-centered">
+                            <div class="column is-8">
+                                <div class="field is-grouped is-grouped-centered is-flex-wrap-wrap">
                                     <div class="control">
                                         <a href="index.html" class="button is-primary is-large">
                                             <span class="icon">
                                                 <i class="fas fa-home"></i>
                                             </span>
                                             <span>На главную</span>
+                                        </a>
+                                    </div>
+                                    <div class="control">
+                                        <a href="faq.html" class="button is-info is-large">
+                                            <span class="icon">
+                                                <i class="fas fa-question-circle"></i>
+                                            </span>
+                                            <span>FAQ</span>
                                         </a>
                                     </div>
                                     <div class="control">
@@ -98,8 +130,10 @@
                         
                         <div class="mt-6 pt-5">
                             <p class="has-text-grey-light">
-                                <i class="fas fa-search"></i>
-                                Попробуйте поискать нужную информацию в нашем <a href="faq.html" class="has-text-primary">разделе FAQ</a>
+                                <span class="icon">
+                                    <i class="fas fa-redo-alt fa-spin"></i>
+                                </span>
+                                Автоматически вернем вас на главную через 10 секунд...
                             </p>
                         </div>
                     </div>
@@ -108,12 +142,36 @@
         </div>
     </div>
 
-    <!-- JavaScript для редиректа через 10 секунд (опционально) -->
+    <!-- Автоматический редирект на главную через 10 секунд -->
     <script>
-        // Автоматический редирект на главную через 10 секунд
         setTimeout(() => {
             window.location.href = 'index.html';
         }, 10000);
+        
+        // Добавляем обратный отсчет
+        let timeLeft = 10;
+        const timerElement = document.createElement('span');
+        timerElement.className = 'tag is-primary is-light ml-2';
+        
+        const timer = setInterval(() => {
+            timeLeft--;
+            const messageBody = document.querySelector('.message-body');
+            if (messageBody) {
+                const existingTimer = messageBody.querySelector('.timer');
+                if (existingTimer) {
+                    existingTimer.textContent = ` ${timeLeft}с`;
+                } else {
+                    const timer = document.createElement('span');
+                    timer.className = 'timer has-text-weight-bold';
+                    timer.textContent = ` ${timeLeft}с`;
+                    messageBody.appendChild(timer);
+                }
+            }
+            
+            if (timeLeft <= 0) {
+                clearInterval(timer);
+            }
+        }, 1000);
     </script>
 </body>
 </html>
