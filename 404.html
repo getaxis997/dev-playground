@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Страница не найдена | Табуретка для кокетки</title>
+    <!-- Bulma CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
+    <!-- Font Awesome для иконок -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <!-- Дополнительные кастомные стили -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .error-page {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+        .error-number {
+            font-size: 12rem;
+            line-height: 1;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: bounce 2s ease infinite;
+        }
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        .error-divider {
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--primary-dark));
+            margin: 2rem auto;
+            border-radius: 2px;
+        }
+    </style>
+</head>
+<body>
+    <div class="error-page">
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-8">
+                    <div class="box p-6 has-text-centered">
+                        <div class="error-number">404</div>
+                        
+                        <h1 class="title is-2 has-text-primary-dark">
+                            Ой! Страница не найдена
+                        </h1>
+                        
+                        <div class="error-divider"></div>
+                        
+                        <p class="subtitle is-5 mb-5">
+                            Кажется, эта страница была удалена или перемещена.<br>
+                            Но не расстраивайтесь, у нас есть много интересного!
+                        </p>
+                        
+                        <div class="columns is-centered mt-6">
+                            <div class="column is-6">
+                                <div class="field is-grouped is-grouped-centered">
+                                    <div class="control">
+                                        <a href="index.html" class="button is-primary is-large">
+                                            <span class="icon">
+                                                <i class="fas fa-home"></i>
+                                            </span>
+                                            <span>На главную</span>
+                                        </a>
+                                    </div>
+                                    <div class="control">
+                                        <a href="contacts.html" class="button is-light is-large">
+                                            <span class="icon">
+                                                <i class="fas fa-envelope"></i>
+                                            </span>
+                                            <span>Связаться</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-6 pt-5">
+                            <p class="has-text-grey mb-4">Или воспользуйтесь навигацией:</p>
+                            <nav class="breadcrumb is-centered is-medium" aria-label="breadcrumbs">
+                                <ul>
+                                    <li><a href="index.html" class="has-text-primary">Главная</a></li>
+                                    <li><a href="faq.html" class="has-text-primary">FAQ</a></li>
+                                    <li><a href="contacts.html" class="has-text-primary">Контакты</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                        
+                        <div class="mt-6 pt-5">
+                            <p class="has-text-grey-light">
+                                <i class="fas fa-search"></i>
+                                Попробуйте поискать нужную информацию в нашем <a href="faq.html" class="has-text-primary">разделе FAQ</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript для редиректа через 10 секунд (опционально) -->
+    <script>
+        // Автоматический редирект на главную через 10 секунд
+        setTimeout(() => {
+            window.location.href = 'index.html';
+        }, 10000);
+    </script>
+</body>
+</html>

@@ -43,17 +43,40 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
     
-    // Плавный скролл к якорям
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
+    // Плавный скролл к якорям (только на главной странице)
+    if (window.location.pathname.endsWith('index.html') || window.location.pathname === '/') {
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
         });
+    }
+
+    // Подсветка активного пункта меню
+    const currentPath = window.location.pathname;
+    const navItems = document.querySelectorAll('.navbar-item');
+    
+    navItems.forEach(item => {
+        const href = item.getAttribute('href');
+        if (href) {
+            // Убираем якоря из сравнения
+            const cleanHref = href.split('#')[0];
+            const cleanCurrentPath = currentPath.split('#')[0];
+            
+            if ((cleanCurrentPath.endsWith(cleanHref) && cleanHref !== '') || 
+                (cleanCurrentPath === '/' && cleanHref === 'index.html') ||
+                (cleanCurrentPath.endsWith('/') && cleanHref === 'index.html')) {
+                item.classList.add('is-active');
+            } else {
+                item.classList.remove('is-active');
+            }
+        }
     });
 });

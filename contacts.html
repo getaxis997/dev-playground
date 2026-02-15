@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Табуретка для кокетки | Контакты</title>
+    <!-- Bulma CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
+    <!-- Font Awesome для иконок -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <!-- Дополнительные кастомные стили -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Кнопка "Наверх" -->
+    <button class="scroll-top" id="scrollTop" aria-label="Наверх">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Хедер с навигацией (единый для всех страниц) -->
+    <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+        <div class="container">
+            <div class="navbar-brand">
+                <a class="navbar-item" href="index.html">
+                    <img src="./assets/img/logo.png" alt="Табуретка для кокетки" height="50">
+                </a>
+
+                <a role="button" class="navbar-burger" id="menuToggle" aria-label="menu" aria-expanded="false" data-target="mainNav">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </a>
+            </div>
+
+            <div id="mainNav" class="navbar-menu">
+                <div class="navbar-end">
+                    <a href="index.html" class="navbar-item">Главная</a>
+                    <a href="faq.html" class="navbar-item">FAQ</a>
+                    <a href="contacts.html" class="navbar-item is-active">Контакты</a>
+                    <div class="navbar-item">
+                        <div class="buttons">
+                            <button class="button is-primary is-medium">Заказать</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main">
+        <!-- Заголовок страницы -->
+        <section class="hero is-primary">
+            <div class="hero-body">
+                <div class="container has-text-centered">
+                    <h1 class="title is-1 has-text-white">
+                        Контакты
+                    </h1>
+                    <h2 class="subtitle is-4 has-text-white-bis">
+                        Свяжитесь с нами любым удобным способом
+                    </h2>
+                </div>
+            </div>
+        </section>
+
+        <!-- Контактная информация и карта -->
+        <section class="section">
+            <div class="container">
+                <div class="columns">
+                    <div class="column is-6">
+                        <div class="box p-6">
+                            <h2 class="title is-3 has-text-primary-dark mb-5">Как нас найти</h2>
+                            
+                            <div class="media mb-5">
+                                <div class="media-left">
+                                    <span class="icon is-large has-text-primary">
+                                        <i class="fas fa-map-marker-alt fa-2x"></i>
+                                    </span>
+                                </div>
+                                <div class="media-content">
+                                    <h3 class="title is-5">Адрес</h3>
+                                    <p class="subtitle is-6">г. Москва, ул. Табуреточная, д. 5</p>
+                                    <p class="has-text-grey">м. "Табуреточная", выход №3, 5 минут пешком</p>
+                                </div>
+                            </div>
+
+                            <div class="media mb-5">
+                                <div class="media-left">
+                                    <span class="icon is-large has-text-primary">
+                                        <i class="fas fa-phone fa-2x"></i>
+                                    </span>
+                                </div>
+                                <div class="media-content">
+                                    <h3 class="title is-5">Телефон</h3>
+                                    <p class="subtitle is-6">+7 (495) 123-45-67</p>
+                                    <p class="has-text-grey">Ежедневно с 10:00 до 20:00</p>
+                                </div>
+                            </div>
+
+                            <div class="media mb-5">
+                                <div class="media-left">
+                                    <span class="icon is-large has-text-primary">
+                                        <i class="fas fa-envelope fa-2x"></i>
+                                    </span>
+                                </div>
+                                <div class="media-content">
+                                    <h3 class="title is-5">Email</h3>
+                                    <p class="subtitle is-6">info@taburetka.ru</p>
+                                    <p class="has-text-grey">Ответим в течение 24 часов</p>
+                                </div>
+                            </div>
+
+                            <div class="media">
+                                <div class="media-left">
+                                    <span class="icon is-large has-text-primary">
+                                        <i class="fas fa-clock fa-2x"></i>
+                                    </span>
+                                </div>
+                                <div class="media-content">
+                                    <h3 class="title is-5">Режим работы</h3>
+                                    <p class="subtitle is-6">Пн-Пт: 10:00 - 20:00</p>
+                                    <p class="subtitle is-6">Сб-Вс: 11:00 - 18:00</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="column is-6">
+                        <div class="box p-6">
+                            <h2 class="title is-3 has-text-primary-dark mb-5">Карта проезда</h2>
+                            <div class="has-ratio" style="height: 400px;">
+                                <iframe 
+                                    src="https://yandex.ru/map-widget/v1/?um=constructor%3Aexample&source=constructor" 
+                                    width="100%" 
+                                    height="100%" 
+                                    frameborder="0"
+                                    style="border-radius: 12px;">
+                                </iframe>
+                            </div>
+                            <p class="has-text-grey mt-3">
+                                <i class="fas fa-info-circle"></i> 
+                                Мы находимся в центре Москвы, рядом с метро
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Форма обратной связи -->
+        <section id="feedback" class="section has-background-light">
+            <div class="container">
+                <div class="columns is-centered">
+                    <div class="column is-8">
+                        <div class="box p-6">
+                            <h2 class="title is-2 has-text-centered mb-6 has-text-primary-dark">Оставьте отзыв или задайте вопрос</h2>
+                            
+                            <form id="feedbackForm" onsubmit="handleSubmit(event)">
+                                <div class="field">
+                                    <label class="label">Ваше имя</label>
+                                    <div class="control has-icons-left">
+                                        <input class="input is-medium" type="text" placeholder="Иван Иванов" required>
+                                        <span class="icon is-small is-left">
+                                            <i class="fas fa-user"></i>
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <div class="field">
+                                    <label class="label">Email</label>
+                                    <div class="control has-icons-left">
+                                        <input class="input is-medium" type="email" placeholder="example@email.com" required>
+                                        <span class="icon is-small is-left">
+                                            <i class="fas fa-envelope"></i>
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <div class="field">
+                                    <label class="label">Тема обращения</label>
+                                    <div class="control">
+                                        <div class="select is-medium is-fullwidth">
+                                            <select required>
+                                                <option value="" disabled selected>Выберите тему</option>
+                                                <option>Вопрос о товаре</option>
+                                                <option>Заказ и доставка</option>
+                                                <option>Сотрудничество</option>
+                                                <option>Жалоба</option>
+                                                <option>Благодарность</option>
+                                                <option>Другое</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="field">
+                                    <label class="label">Сообщение</label>
+                                    <div class="control">
+                                        <textarea class="textarea is-medium" placeholder="Ваше сообщение..." rows="5" required></textarea>
+                                    </div>
+                                </div>
+
+                                <div class="field">
+                                    <div class="control">
+                                        <label class="checkbox">
+                                            <input type="checkbox" required>
+                                            Я соглашаюсь на <a href="#" class="has-text-primary">обработку персональных данных</a>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="field is-grouped is-grouped-centered mt-5">
+                                    <div class="control">
+                                        <button class="button is-primary is-large" type="submit">
+                                            <span class="icon">
+                                                <i class="fas fa-paper-plane"></i>
+                                            </span>
+                                            <span>Отправить сообщение</span>
+                                        </button>
+                                    </div>
+                                    <div class="control">
+                                        <button class="button is-light is-large" type="reset">
+                                            <span class="icon">
+                                                <i class="fas fa-undo"></i>
+                                            </span>
+                                            <span>Очистить</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+
+                            <div id="successMessage" class="notification is-success is-hidden mt-5">
+                                <button class="delete" onclick="this.parentElement.classList.add('is-hidden')"></button>
+                                <p class="has-text-centered">
+                                    <span class="icon">
+                                        <i class="fas fa-check-circle"></i>
+                                    </span>
+                                    Спасибо! Ваше сообщение отправлено. Мы свяжемся с вами в ближайшее время.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Дополнительная информация -->
+        <section class="section">
+            <div class="container">
+                <div class="columns is-centered">
+                    <div class="column is-10">
+                        <div class="columns is-multiline">
+                            <div class="column is-4">
+                                <div class="has-text-centered">
+                                    <span class="icon is-large has-text-primary mb-3">
+                                        <i class="fas fa-truck fa-3x"></i>
+                                    </span>
+                                    <h3 class="title is-5">Быстрая доставка</h3>
+                                    <p>Доставляем по всей России курьерскими службами</p>
+                                </div>
+                            </div>
+                            <div class="column is-4">
+                                <div class="has-text-centered">
+                                    <span class="icon is-large has-text-primary mb-3">
+                                        <i class="fas fa-credit-card fa-3x"></i>
+                                    </span>
+                                    <h3 class="title is-5">Удобная оплата</h3>
+                                    <p>Наличные, карты, безналичный расчет</p>
+                                </div>
+                            </div>
+                            <div class="column is-4">
+                                <div class="has-text-centered">
+                                    <span class="icon is-large has-text-primary mb-3">
+                                        <i class="fas fa-headset fa-3x"></i>
+                                    </span>
+                                    <h3 class="title is-5">Поддержка 24/7</h3>
+                                    <p>Отвечаем на вопросы в любое время</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Футер (единый для всех страниц) -->
+    <footer class="footer has-background-primary has-text-white">
+        <div class="container">
+            <div class="columns is-multiline">
+                <div class="column is-3">
+                    <h4 class="title is-5 has-text-white">О нас</h4>
+                    <p class="has-text-white-light">Содержание раздела о компании...</p>
+                </div>
+                <div class="column is-3">
+                    <h4 class="title is-5 has-text-white">Услуги</h4>
+                    <p class="has-text-white-light">Описание предоставляемых услуг...</p>
+                </div>
+                <div class="column is-3">
+                    <h4 class="title is-5 has-text-white">Портфолио</h4>
+                    <p class="has-text-white-light">Примеры выполненных работ...</p>
+                </div>
+                <div class="column is-3">
+                    <h4 class="title is-5 has-text-white">Полезные ссылки</h4>
+                    <ul class="has-text-white-light">
+                        <li><a href="faq.html" class="has-text-white-light">FAQ</a></li>
+                        <li><a href="contacts.html" class="has-text-white-light">Контакты</a></li>
+                        <li><a href="#" class="has-text-white-light">Доставка и оплата</a></li>
+                        <li><a href="#" class="has-text-white-light">Политика конфиденциальности</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="has-text-centered mt-6">
+                <div class="is-flex is-justify-content-center mb-4">
+                    <a href="#" class="has-text-white mx-3">
+                        <span class="icon is-large">
+                            <i class="fab fa-facebook fa-2x"></i>
+                        </span>
+                    </a>
+                    <a href="#" class="has-text-white mx-3">
+                        <span class="icon is-large">
+                            <i class="fab fa-instagram fa-2x"></i>
+                        </span>
+                    </a>
+                    <a href="#" class="has-text-white mx-3">
+                        <span class="icon is-large">
+                            <i class="fab fa-telegram fa-2x"></i>
+                        </span>
+                    </a>
+                </div>
+                <p class="has-text-white-light">&copy; 1880 - 2025 Men's taburets. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="menu.js"></script>
+    <script>
+        // Обработка отправки формы
+        function handleSubmit(event) {
+            event.preventDefault();
+            
+            // Показываем сообщение об успехе
+            const successMessage = document.getElementById('successMessage');
+            successMessage.classList.remove('is-hidden');
+            
+            // Прокручиваем к сообщению
+            successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            
+            // Очищаем форму
+            event.target.reset();
+            
+            // Скрываем сообщение через 5 секунд
+            setTimeout(() => {
+                successMessage.classList.add('is-hidden');
+            }, 5000);
+            
+            return false;
+        }
+    </script>
+</body>
+</html>
