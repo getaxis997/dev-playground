@@ -19,12 +19,12 @@
         <i class="fas fa-arrow-up"></i>
     </button>
 
-    <!-- Хедер с навигацией (единый для всех страниц) -->
+    <!-- Хедер с навигацией -->
     <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
         <div class="container">
             <div class="navbar-brand">
                 <a class="navbar-item" href="index.html">
-                    <img src="./assets/img/logo.png" alt="Табуретка для кокетки" height="50">
+                    <img src="https://bulma.io/assets/images/bulma-logo.png?1" alt="Табуретка для кокетки" height="50" style="max-height: 50px;">
                 </a>
 
                 <a role="button" class="navbar-burger" id="menuToggle" aria-label="menu" aria-expanded="false" data-target="mainNav">
@@ -146,13 +146,13 @@
                 <div class="columns is-centered">
                     <div class="column is-8">
                         <div class="box p-6">
-                            <h2 class="title is-2 has-text-centered mb-6 has-text-primary-dark">Оставьте отзыв или задайте вопрос</h2>
+                            <h2 class="title is-2 has-text-centered mb-6 has-text-primary-dark">Оставьте отзыв</h2>
                             
                             <form id="feedbackForm" onsubmit="handleSubmit(event)">
                                 <div class="field">
-                                    <label class="label">Ваше имя</label>
+                                    <label class="label">Имя</label>
                                     <div class="control has-icons-left">
-                                        <input class="input is-medium" type="text" placeholder="Иван Иванов" required>
+                                        <input class="input is-medium" type="text" placeholder="Ваше имя" required id="name">
                                         <span class="icon is-small is-left">
                                             <i class="fas fa-user"></i>
                                         </span>
@@ -162,7 +162,7 @@
                                 <div class="field">
                                     <label class="label">Email</label>
                                     <div class="control has-icons-left">
-                                        <input class="input is-medium" type="email" placeholder="example@email.com" required>
+                                        <input class="input is-medium" type="email" placeholder="example@email.com" required id="email">
                                         <span class="icon is-small is-left">
                                             <i class="fas fa-envelope"></i>
                                         </span>
@@ -170,17 +170,15 @@
                                 </div>
 
                                 <div class="field">
-                                    <label class="label">Тема обращения</label>
+                                    <label class="label">Тема</label>
                                     <div class="control">
                                         <div class="select is-medium is-fullwidth">
-                                            <select required>
+                                            <select required id="topic">
                                                 <option value="" disabled selected>Выберите тему</option>
-                                                <option>Вопрос о товаре</option>
-                                                <option>Заказ и доставка</option>
-                                                <option>Сотрудничество</option>
+                                                <option>Предложение</option>
                                                 <option>Жалоба</option>
+                                                <option>Вопрос</option>
                                                 <option>Благодарность</option>
-                                                <option>Другое</option>
                                             </select>
                                         </div>
                                     </div>
@@ -189,15 +187,15 @@
                                 <div class="field">
                                     <label class="label">Сообщение</label>
                                     <div class="control">
-                                        <textarea class="textarea is-medium" placeholder="Ваше сообщение..." rows="5" required></textarea>
+                                        <textarea class="textarea is-medium" placeholder="Ваше сообщение..." rows="5" required id="message"></textarea>
                                     </div>
                                 </div>
 
                                 <div class="field">
                                     <div class="control">
                                         <label class="checkbox">
-                                            <input type="checkbox" required>
-                                            Я соглашаюсь на <a href="404.html" class="has-text-primary">обработку персональных данных</a>
+                                            <input type="checkbox" required id="agree">
+                                            Соглашаюсь на <a href="#" class="has-text-primary">обработку персональных данных</a>
                                         </label>
                                     </div>
                                 </div>
@@ -208,15 +206,7 @@
                                             <span class="icon">
                                                 <i class="fas fa-paper-plane"></i>
                                             </span>
-                                            <span>Отправить сообщение</span>
-                                        </button>
-                                    </div>
-                                    <div class="control">
-                                        <button class="button is-light is-large" type="reset">
-                                            <span class="icon">
-                                                <i class="fas fa-undo"></i>
-                                            </span>
-                                            <span>Очистить</span>
+                                            <span>Отправить отзыв</span>
                                         </button>
                                     </div>
                                 </div>
@@ -228,47 +218,8 @@
                                     <span class="icon">
                                         <i class="fas fa-check-circle"></i>
                                     </span>
-                                    Спасибо! Ваше сообщение отправлено. Мы свяжемся с вами в ближайшее время.
+                                    Спасибо! Ваше сообщение отправлено.
                                 </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Дополнительная информация -->
-        <section class="section">
-            <div class="container">
-                <div class="columns is-centered">
-                    <div class="column is-10">
-                        <div class="columns is-multiline">
-                            <div class="column is-4">
-                                <div class="has-text-centered">
-                                    <span class="icon is-large has-text-primary mb-3">
-                                        <i class="fas fa-truck fa-3x"></i>
-                                    </span>
-                                    <h3 class="title is-5">Быстрая доставка</h3>
-                                    <p>Доставляем по всей России курьерскими службами</p>
-                                </div>
-                            </div>
-                            <div class="column is-4">
-                                <div class="has-text-centered">
-                                    <span class="icon is-large has-text-primary mb-3">
-                                        <i class="fas fa-credit-card fa-3x"></i>
-                                    </span>
-                                    <h3 class="title is-5">Удобная оплата</h3>
-                                    <p>Наличные, карты, безналичный расчет</p>
-                                </div>
-                            </div>
-                            <div class="column is-4">
-                                <div class="has-text-centered">
-                                    <span class="icon is-large has-text-primary mb-3">
-                                        <i class="fas fa-headset fa-3x"></i>
-                                    </span>
-                                    <h3 class="title is-5">Поддержка 24/7</h3>
-                                    <p>Отвечаем на вопросы в любое время</p>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -277,7 +228,7 @@
         </section>
     </main>
 
-    <!-- Футер (единый для всех страниц) -->
+    <!-- Футер -->
     <footer class="footer has-background-primary has-text-white">
         <div class="container">
             <div class="columns is-multiline">
@@ -306,23 +257,23 @@
             
             <div class="has-text-centered mt-6">
                 <div class="is-flex is-justify-content-center mb-4">
-                    <a href="404.html" class="has-text-white mx-3">
+                    <a href="#" class="has-text-white mx-3">
                         <span class="icon is-large">
                             <i class="fab fa-facebook fa-2x"></i>
                         </span>
                     </a>
-                    <a href="404.html" class="has-text-white mx-3">
+                    <a href="#" class="has-text-white mx-3">
                         <span class="icon is-large">
                             <i class="fab fa-instagram fa-2x"></i>
                         </span>
                     </a>
-                    <a href="404.html" class="has-text-white mx-3">
+                    <a href="#" class="has-text-white mx-3">
                         <span class="icon is-large">
                             <i class="fab fa-telegram fa-2x"></i>
                         </span>
                     </a>
                 </div>
-                <p class="has-text-white-light">&copy; 1880 - 2025 Men's taburets. Все права защищены.</p>
+                <p class="has-text-white-light">&copy; 2025 Табуретка для кокетки. Все права защищены.</p>
             </div>
         </div>
     </footer>
@@ -330,26 +281,29 @@
     <!-- JavaScript -->
     <script src="menu.js"></script>
     <script>
-        // Обработка отправки формы
         function handleSubmit(event) {
             event.preventDefault();
+            
+            // Проверка согласия
+            if (!document.getElementById('agree').checked) {
+                alert('Пожалуйста, согласитесь на обработку персональных данных');
+                return;
+            }
             
             // Показываем сообщение об успехе
             const successMessage = document.getElementById('successMessage');
             successMessage.classList.remove('is-hidden');
             
-            // Прокручиваем к сообщению
-            successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            
             // Очищаем форму
             event.target.reset();
             
-            // Скрываем сообщение через 5 секунд
+            // Прокручиваем к сообщению
+            successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            
+            // Скрываем через 5 секунд
             setTimeout(() => {
                 successMessage.classList.add('is-hidden');
             }, 5000);
-            
-            return false;
         }
     </script>
 </body>
