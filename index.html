@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Табуретка для кокетки | Минималистичный лендинг</title>
+    <title>Табуретка для кокетки | Главная</title>
     <!-- Bulma CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
     <!-- Font Awesome для иконок -->
@@ -19,11 +19,11 @@
         <i class="fas fa-arrow-up"></i>
     </button>
 
-    <!-- Хедер с навигацией -->
+    <!-- Хедер с навигацией (единый для всех страниц) -->
     <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
         <div class="container">
             <div class="navbar-brand">
-                <a class="navbar-item" href="#">
+                <a class="navbar-item" href="index.html">
                     <img src="./assets/img/logo.png" alt="Табуретка для кокетки" height="50">
                 </a>
 
@@ -37,13 +37,12 @@
 
             <div id="mainNav" class="navbar-menu">
                 <div class="navbar-end">
-                    <a href="#about" class="navbar-item">О нас</a>
-                    <a href="#services" class="navbar-item">Услуги</a>
-                    <a href="#portfolio" class="navbar-item">Портфолио</a>
-                    <a href="#contact" class="navbar-item">Контакты</a>
+                    <a href="index.html" class="navbar-item is-active">Главная</a>
+                    <a href="FAQ.html" class="navbar-item">FAQ</a>
+                    <a href="contacts.html" class="navbar-item">Контакты</a>
                     <div class="navbar-item">
                         <div class="buttons">
-                            <button class="button is-primary is-medium">Заказать</button>
+                            <a href="contacts.html" class="button is-primary is-medium">Заказать</a>
                         </div>
                     </div>
                 </div>
@@ -52,7 +51,7 @@
     </nav>
 
     <main class="main">
-        <!-- Hero секция с Bulma -->
+        <!-- Hero секция -->
         <section class="hero is-primary is-medium">
             <div class="hero-body">
                 <div class="container has-text-centered">
@@ -62,12 +61,12 @@
                     <h2 class="subtitle is-4 has-text-white-bis">
                         Ручная работа с душой
                     </h2>
-                    <button class="button is-light is-large">
-                        <span>Смотреть коллекцию</span>
+                    <a href="contacts.html#feedback" class="button is-light is-large">
+                        <span>Оставить отзыв</span>
                         <span class="icon">
                             <i class="fas fa-arrow-right"></i>
                         </span>
-                    </button>
+                    </a>
                 </div>
             </div>
         </section>
@@ -124,7 +123,7 @@
                             <span class="icon is-large mb-4">
                                 <i class="fas fa-shield-alt fa-3x has-text-primary"></i>
                             </span>
-                            <p>Надежность - ваш комфорт в надежных руках!.</p>
+                            <p>Надежность - ваш комфорт в надежных руках!</p>
                         </div>
                     </div>
                     <div class="column is-4">
@@ -132,13 +131,13 @@
                             <span class="icon is-large mb-4">
                                 <i class="fas fa-star fa-3x has-text-primary"></i>
                             </span>
-                            <p>Качество наших товаров - наша гордость!.</p>
+                            <p>Качество наших товаров - наша гордость!</p>
                         </div>
                     </div>
                 </div>
 
                 <div class="has-text-centered mt-6">
-                    <button class="button is-primary is-large">Интерактивная кнопка</button>
+                    <a href="FAQ.html" class="button is-primary is-large">Часто задаваемые вопросы</a>
                 </div>
             </div>
         </section>
@@ -204,7 +203,7 @@
                 </div>
 
                 <div class="has-text-centered mt-5">
-                    <button class="button is-primary is-large">Купить все</button>
+                    <a href="404.html" class="button is-primary is-large">Купить все</a>
                 </div>
 
                 <h2 class="title is-2 has-text-centered mt-6 mb-6 has-text-primary-dark">Самые ходовые модели</h2>
@@ -252,7 +251,7 @@
                 </div>
 
                 <div class="has-text-centered mt-5">
-                    <button class="button is-primary is-large">Купить все</button>
+                    <a href="404.html" class="button is-primary is-large">Купить все</a>
                 </div>
             </div>
         </section>
@@ -271,47 +270,9 @@
                 </div>
             </div>
         </section>
-
-        <!-- Contact секция -->
-        <section id="contact" class="section has-background-light">
-            <div class="container">
-                <h2 class="title is-2 has-text-centered mb-6 has-text-primary-dark">Контакты</h2>
-                
-                <div class="columns">
-                    <div class="column is-6">
-                        <div class="box p-6">
-                            <h3 class="title is-4 has-text-primary">Адрес</h3>
-                            <p class="subtitle is-6 mb-4">г. Москва, ул. Табуреточная, д. 5</p>
-                            
-                            <h3 class="title is-4 has-text-primary">Телефон</h3>
-                            <p class="subtitle is-6 mb-4">+7 (495) 123-45-67</p>
-                            
-                            <h3 class="title is-4 has-text-primary">Email</h3>
-                            <p class="subtitle is-6">info@taburetka.ru</p>
-                        </div>
-                    </div>
-                    
-                    <div class="column is-6">
-                        <div class="box p-6">
-                            <h3 class="title is-4 has-text-primary">Подписка на рассылку</h3>
-                            <div class="field">
-                                <div class="control">
-                                    <input class="input is-medium" type="email" placeholder="Ваш email">
-                                </div>
-                            </div>
-                            <div class="field">
-                                <div class="control">
-                                    <button class="button is-primary is-medium is-fullwidth">Подписаться</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
     </main>
 
-    <!-- Футер -->
+    <!-- Футер (единый для всех страниц) -->
     <footer class="footer has-background-primary has-text-white">
         <div class="container">
             <div class="columns is-multiline">
@@ -330,10 +291,10 @@
                 <div class="column is-3">
                     <h4 class="title is-5 has-text-white">Полезные ссылки</h4>
                     <ul class="has-text-white-light">
-                        <li><a href="#" class="has-text-white-light">Доставка и оплата</a></li>
-                        <li><a href="#" class="has-text-white-light">Гарантии</a></li>
-                        <li><a href="#" class="has-text-white-light">Возврат</a></li>
-                        <li><a href="#" class="has-text-white-light">Политика конфиденциальности</a></li>
+                        <li><a href="FAQ.html" class="has-text-white-light">FAQ</a></li>
+                        <li><a href="contacts.html" class="has-text-white-light">Контакты</a></li>
+                        <li><a href="404.html" class="has-text-white-light">Доставка и оплата</a></li>
+                        <li><a href="404.html" class="has-text-white-light">Политика конфиденциальности</a></li>
                     </ul>
                 </div>
             </div>

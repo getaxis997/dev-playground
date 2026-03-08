@@ -2,6 +2,7 @@
 :root {
     --primary-color: #2c5530;
     --primary-dark: #1a3a1e;
+    --primary-light: #e8f0e9;
 }
 
 /* Дополнительные настройки */
@@ -11,6 +12,7 @@ html {
 
 body {
     font-family: 'Inter', sans-serif;
+    padding-top: 0;
 }
 
 /* Кастомные цвета для Bulma */
@@ -89,11 +91,33 @@ body {
 .navbar-item {
     font-weight: 500;
     transition: color 0.3s ease;
+    color: #333 !important;
 }
 
 .navbar-item:hover {
     color: var(--primary-color) !important;
     background: transparent !important;
+}
+
+/* Исправление цвета для активных пунктов меню */
+.navbar-item.is-active {
+    color: var(--primary-color) !important;
+    font-weight: 600;
+    background: transparent !important;
+    border-bottom: 2px solid var(--primary-color);
+}
+
+/* Убираем синий цвет у посещенных ссылок */
+.navbar-item:visited,
+.navbar-item:link,
+.navbar-item:active {
+    color: #333 !important;
+}
+
+.navbar-item.is-active:visited,
+.navbar-item.is-active:link,
+.navbar-item.is-active:active {
+    color: var(--primary-color) !important;
 }
 
 /* Кнопка "Наверх" */
@@ -130,7 +154,78 @@ body {
     transform: scale(1.1);
 }
 
+/* Стили для аккордеона */
+.card-header {
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.card-header:hover {
+    background-color: #f5f5f5;
+}
+
+.card-header-title {
+    color: var(--primary-dark);
+}
+
+.card-header-icon {
+    transition: transform 0.3s ease;
+}
+
+.card-content.is-hidden {
+    display: none;
+}
+
+.card-content {
+    transition: all 0.3s ease;
+}
+
+/* Стили для формы */
+.input:focus, .textarea:focus, .select select:focus {
+    border-color: var(--primary-color) !important;
+    box-shadow: 0 0 0 0.125em rgba(44, 85, 48, 0.25) !important;
+}
+
+/* Стили для карты */
+.has-ratio iframe {
+    border: none;
+    border-radius: 12px;
+}
+
+/* Анимации для уведомлений */
+.notification {
+    animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Стили для иконок в контактах */
+.media-left .icon {
+    transition: transform 0.3s ease;
+}
+
+.media:hover .media-left .icon {
+    transform: scale(1.1);
+}
+
 /* Адаптивные корректировки */
+@media (max-width: 1024px) {
+    .navbar-item.is-active {
+        border-bottom: none;
+        background-color: var(--primary-light) !important;
+        color: var(--primary-dark) !important;
+    }
+}
+
 @media (max-width: 768px) {
     .navbar-brand {
         min-height: 70px;
@@ -156,6 +251,12 @@ body {
         right: 20px;
         font-size: 20px;
     }
+    
+    /* Исправление для заголовка на странице контактов */
+    .hero.is-primary .hero-body {
+        padding-top: 6rem !important;
+        padding-bottom: 3rem !important;
+    }
 }
 
 @media (max-width: 480px) {
@@ -173,6 +274,10 @@ body {
     
     .box {
         padding: 1.5rem !important;
+    }
+    
+    .hero.is-primary .hero-body {
+        padding-top: 5rem !important;
     }
 }
 
@@ -201,6 +306,7 @@ body {
     transition: opacity 0.3s ease, padding-left 0.3s ease;
     display: inline-block;
     padding: 0.3rem 0;
+    color: rgba(255, 255, 255, 0.8) !important;
 }
 
 .footer a:hover {
@@ -216,4 +322,23 @@ body {
 
 .footer .icon.is-large:hover {
     transform: scale(1.1);
+}
+
+/* Стили для всех ссылок */
+a {
+    color: var(--primary-color);
+    transition: color 0.3s ease;
+}
+
+a:visited {
+    color: var(--primary-color);
+}
+
+a:hover {
+    color: var(--primary-dark);
+}
+
+/* Стили для hero на всех страницах */
+.hero.is-primary .hero-body {
+    padding-top: 7rem !important;
 }
